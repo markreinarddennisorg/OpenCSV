@@ -314,7 +314,7 @@
             <!--
                    gpg is required for Sonatype's publishing mechanism to central
                -->
-            <plugin>
+<!--           <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.6</version>
@@ -328,7 +328,8 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+-->
+	<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
