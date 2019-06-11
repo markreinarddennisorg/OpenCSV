@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         name="Custom PMD Plugin Ruleset for OpenCSV"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd ">
+    <description>This ruleset checks code for violations</description>
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    <rule ref="category/java/bestpractices.xml/UnusedFormalParameter"/>
+    <rule ref="category/java/bestpractices.xml/UnusedLocalVariable"/>
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>
+    <rule ref="category/java/bestpractices.xml/UnusedPrivateMethod"/>
+    <rule ref="category/java/codestyle.xml/DuplicateImports"/>
+    <rule ref="category/java/errorprone.xml/UnnecessaryConversionTemporary"/>
+    <rule ref="rulesets/java/optimizations.xml/UseStringBufferForStringAppends"/>
+    <rule ref="rulesets/java/optimizations.xml/UseArraysAsList"/>
+    <rule ref="rulesets/java/optimizations.xml/AvoidArrayLoops"/>
+
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock" message="Must handle exceptions">
+        <priority>2</priority>
+    </rule>
+    <rule ref="rulesets/java/codesize.xml/CyclomaticComplexity">
+        <properties>
+            <property name="methodReportLevel" value="25"/>
+            <property name="classReportLevel" value="250"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/codesize.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="20"/>
+        </properties>
+    </rule>
+</ruleset>
