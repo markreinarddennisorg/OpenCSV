@@ -1,7 +1,10 @@
 language: java
 
-mvn sonar:sonar \
-  -Dsonar.projectKey=markdenisreinard \
-  -Dsonar.organization=mark-dlc-github \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.login=bd9bd6401835cf34c6a39b26b76a4c007b81a601
+addons:
+  sonarcloud:
+    organization: "mark-dlc-github" # the key of the org you chose at step #3
+    token:
+      secure: "bd9bd6401835cf34c6a39b26b76a4c007b81a601" # encrypted value of your token
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
