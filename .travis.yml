@@ -11,7 +11,7 @@ addons:
 
 deploy:
   provider: releases
-  api_key: "bbde8b37359f04a4f640ec4277d9222fafbf0030"
+  api_key: "a44cb9f2267460dab0edaeb2d38e5d96ef3303bb"
   file: "FILE TO UPLOAD"
   skip_cleanup: true
       
