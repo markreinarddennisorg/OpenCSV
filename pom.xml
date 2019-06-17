@@ -244,7 +244,7 @@
 		    <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
 		    <configLocation>checkstyle.xml</configLocation>
 		    <consoleOutput>true</consoleOutput>
-		    <failsOnError>false/failsOnError>
+		    <failsOnError>false</failsOnError>
 	    	    <linkXRef>false</linkXRef>
 	        </configuration>
 	        <executions>
