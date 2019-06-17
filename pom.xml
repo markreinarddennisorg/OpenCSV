@@ -192,6 +192,29 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${maven-assembly-plugin.version}</version>
                 </plugin>
+		<!--checkstyle-->    
+		<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                        <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
+                        <configLocation>checkstyle.xml</configLocation>
+		        <consoleOutput>true</consoleOutput>
+                        <failsOnError>true</failsOnError>
+                        <linkXRef>false</linkXRef>
+                    </configuration>
+		    <executions>
+                        <execution>
+                          <id>validate</id>
+                          <phase>validate</phase>
+                          <goals>
+                            <goal>check</goal>
+                          </goals>
+                        </execution>
+                    </executions>    
+                </plugin>
                 <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
                 <plugin>
                     <groupId>org.eclipse.m2e</groupId>
@@ -502,19 +525,7 @@
                     <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
                     <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
                     <configLocation>checkstyle.xml</configLocation>
-		    <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
-                    <linkXRef>false</linkXRef>
                 </configuration>
-		<executions>
-                    <execution>
-                      <id>validate</id>
-                      <phase>validate</phase>
-                      <goals>
-                        <goal>check</goal>
-                      </goals>
-                    </execution>
-                </executions>    
                 <reportSets>
                     <reportSet>
                         <reports>
