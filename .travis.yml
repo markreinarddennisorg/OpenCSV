@@ -1,5 +1,8 @@
 language: java
 
+notifications:
+  slack: markreinardde-kq42908:uaK0RMwD7UvsQmqyWcUWrIS7
+
 addons:
   sonarcloud:
     organization: "markreinarddennisorg" # the key of the org you chose at step #3
