@@ -79,9 +79,7 @@ public class HeaderIndex {
         headerToPosition.clear();
         int i = 0;
         while(i < positionToHeader.length) {
-            if (header != null) {
-                headerToPosition.put(header[i], i);
-            }
+            headerToPosition.put(header[i], i);
             i++;
         }
     }
