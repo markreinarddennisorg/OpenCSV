@@ -14,3 +14,4 @@ script:
 
 script:
   - mvn site
+  mvn install -DskipTests=false -Dmaven.javadoc.skip=false -Dmaven.test.skip=false -B -V
