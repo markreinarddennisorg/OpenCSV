@@ -4,7 +4,7 @@ addons:
   sonarcloud:
     organization: "markreinarddennisorg" # the key of the org you chose at step #3
     token:
-      secure: "0ec9dfad56a04d9545fbd91483a549982877126d" # encrypted value of your token
+      secure: "36fecc060db1b2300c97280716373d9bd38cffbf" # encrypted value of your token
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
