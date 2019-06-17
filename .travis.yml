@@ -14,8 +14,6 @@ deploy:
   api_key: "bbde8b37359f04a4f640ec4277d9222fafbf0030"
   file: "FILE TO UPLOAD"
   skip_cleanup: true
-  on:
-    tags: true
       
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
