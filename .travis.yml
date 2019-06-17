@@ -11,10 +11,12 @@ addons:
 
 deploy:
   provider: releases
-  api_key: "a44cb9f2267460dab0edaeb2d38e5d96ef3303bb"
+  api_key: $GITHUB_OAUTH_TOKEN
   file: "FILE TO UPLOAD"
   skip_cleanup: true
-      
+  on:
+    tags: true      
+
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
