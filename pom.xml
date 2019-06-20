@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.surefire.version>2.19.1</maven.surefire.version>
+        <maven.surefire.version>3.0.0-M3</maven.surefire.version>
         <maven.site.version>3.7.1</maven.site.version>
         <jacoco.version>0.8.3</jacoco.version>
         <maven.javadoc.version>3.1.0</maven.javadoc.version>
@@ -127,6 +127,14 @@
                                 <include>**/*Spec.java</include>
                                 <include>**/*Test.java</include>
                             </includes>
+                            <properties>
+                                <configurationParameters>
+                                    junit.jupiter.conditions.deactivate = *
+                                    junit.jupiter.extensions.autodetection.enabled = true
+                                    junit.jupiter.testinstance.lifecycle.default = per_class
+                                    junit.jupiter.execution.parallel.enabled = true
+                                </configurationParameters>
+                            </properties>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -467,10 +475,11 @@
             <version>5.4.2</version>
             <scope>test</scope>
         </dependency>
-	<dependency>
-          <groupId>org.junit.platform</groupId>
-          <artifactId>junit-platform-surefire-provider</artifactId>
-          <version>1.0.3</version>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.4.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <reporting>
