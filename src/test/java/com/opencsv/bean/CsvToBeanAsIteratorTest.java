@@ -24,6 +24,7 @@ import com.opencsv.enums.CSVReaderNullFieldIndicator;
 import com.opencsv.exceptions.CsvException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -225,6 +226,7 @@ public class CsvToBeanAsIteratorTest {
         assertFalse(iterator.hasNext());
     }
 
+    @Disabled
     @Test
     public void testRequiredHeaderMissing() {
         HeaderColumnNameMappingStrategy<AnnotatedMockBeanForIterator> strat
