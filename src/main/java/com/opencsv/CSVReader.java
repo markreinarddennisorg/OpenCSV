@@ -351,6 +351,17 @@ public class CSVReader implements Closeable, Iterable<String[]> {
         }
     }
 
+    public ListIterator<String[]> listIterator() {
+		return null;
+//        try {
+//			CSVListIterator it = new CSVListIterator(this.readAll());
+//			it.setErrorLocale(errorLocale);
+//			return it;
+//		} catch (IOException e) {
+//			throw new RuntimeException(e);
+//		}
+	}
+
     /**
      * Returns if the CSVReader will verify the reader before each read.
      * <p>
