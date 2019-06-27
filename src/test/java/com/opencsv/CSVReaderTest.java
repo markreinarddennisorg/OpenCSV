@@ -68,12 +68,16 @@ public class CSVReaderTest {
 
         // test normal case
         assertEquals(3, csvr.getNextColumnSize());
+        assertEquals(3, csvr.nextLineLength(false));
+        assertEquals(5, csvr.nextLineLength(true));
         String[] nextLine = csvr.readNext();
         assertEquals("a", nextLine[0]);
         assertEquals("b", nextLine[1]);
         assertEquals("c", nextLine[2]);
 
         // test quoted commas
+        assertEquals(7, csvr.nextLineLength(false));
+        assertEquals(9, csvr.nextLineLength(true));
         nextLine = csvr.readNext();
         assertEquals("a", nextLine[0]);
         assertEquals("b,b,b", nextLine[1]);

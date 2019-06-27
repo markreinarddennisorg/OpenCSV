@@ -468,6 +468,10 @@ public class CSVReader implements Closeable, Iterable<String[]> {
             parser.setErrorLocale(this.errorLocale);
         }
     }
+
+    public int nextLineLength(boolean includeSeperator) throws IOException {
+        return 0;
+    }
     
     /**
      * Returns the next line from the input without removing it from the
