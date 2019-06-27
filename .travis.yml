@@ -8,6 +8,15 @@ addons:
     organization: "markreinarddennisorg" # the key of the org you chose at step #3
     token:
       secure: "36fecc060db1b2300c97280716373d9bd38cffbf" # encrypted value of your token
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file: "/home/travis/build/markreinarddennisorg/OpenCSV/target/OpenCSV-5.0-SNAPSHOT.jar"
+  skip_cleanup: true
+  on:
+    tags: true      
+
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
