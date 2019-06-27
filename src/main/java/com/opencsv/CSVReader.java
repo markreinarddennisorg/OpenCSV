@@ -470,7 +470,10 @@ public class CSVReader implements Closeable, Iterable<String[]> {
     }
 
     public int nextLineLength(boolean includeSeperator) throws IOException {
-        return 0;
+		String[] peek = peek();
+		if (peek == null)
+			return -1;
+		return Arrays.stream(peek).mapToInt(String::length).sum() + (includeSeperator ? peek.length - 1 : 0);
     }
     
     /**
