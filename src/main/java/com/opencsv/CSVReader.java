@@ -489,7 +489,8 @@ public class CSVReader implements Closeable, Iterable<String[]> {
         return peekedLine;
     }
 
-    public int getNextColumnSize() {
-        return 0;
+    public int getNextColumnSize() throws IOException {
+        String[] peek = peek();
+        return peek == null ? -1 : peek.length;
     }
 }
