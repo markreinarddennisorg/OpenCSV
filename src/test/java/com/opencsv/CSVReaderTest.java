@@ -67,6 +67,7 @@ public class CSVReaderTest {
     public void testParseLine() throws IOException {
 
         // test normal case
+        assertEquals(3, csvr.getNextColumnSize());
         String[] nextLine = csvr.readNext();
         assertEquals("a", nextLine[0]);
         assertEquals("b", nextLine[1]);

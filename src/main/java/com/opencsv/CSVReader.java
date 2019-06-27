@@ -488,4 +488,8 @@ public class CSVReader implements Closeable, Iterable<String[]> {
         }
         return peekedLine;
     }
+
+    public int getNextColumnSize() {
+        return 0;
+    }
 }
